@@ -1,0 +1,92 @@
+﻿<Window x:Class="Project.AddUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="AddUser" Height="600" Width="600">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="FontSize" Value="18"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="TextAlignment" Value="Left"></Setter>
+                <Setter Property="Background" Value="#FFDBDCDE"></Setter>
+
+            </Style.Setters>
+            <!--<Style.Triggers>
+                <Trigger Property="IsFocused" Value="true">
+                    <Setter Property="BorderBrush" Value="Orange"></Setter>
+                    <Setter Property="BorderThickness" Value="1"></Setter>
+                    <Setter Property="Height" Value="100"></Setter>
+                    <Setter Property="Background" Value="White"></Setter>
+                </Trigger>
+
+
+            </Style.Triggers>-->
+
+        </Style>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Background" Value="#FFDEE6F0"></Setter>
+                <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+            </Style.Setters>
+            <!--<Style.Triggers>
+
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="20"></Setter>
+                    <Setter Property="Foreground" Value="Orange"></Setter>
+                    <Setter Property="BorderBrush" Value="Orange"></Setter>
+                    <Setter Property="BorderThickness" Value="2"></Setter>
+                    <Setter Property="Background" Value="#FFF5B42A"></Setter>
+
+                </Trigger>
+            </Style.Triggers>-->
+
+        </Style>
+        <Style TargetType="Label">
+            <Style.Setters>
+                <Setter Property="FontWeight" Value="ExtraBlack"></Setter>
+                <Setter Property="FontSize" Value="16"></Setter>
+            </Style.Setters>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Margin="20 0 0 0 ">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="80"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="123"></RowDefinition>
+
+            <RowDefinition Height="auto" MinHeight="26"></RowDefinition>
+            <RowDefinition Height="auto" MinHeight="106"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" TextAlignment="Center" FontFamily="Algerian" FontSize="26" FontWeight="Bold" Margin="0 15">
+           Add User
+        </TextBlock>
+        <Label Grid.Row="1" Grid.Column="0" Name="UserNamtxt"  Content="Name:" Grid.ColumnSpan="2" FontFamily="Algerian" Margin="15,50,131,42"  />
+        <TextBox Grid.Row="1" Grid.Column="1" Width="auto" Margin="35,49,206,42" MaxHeight="40px"  Name="txtbxUserName" MaxLength="5" Background="White"/>
+        <Label Grid.Column="0" Name="UseEmailLabel"  Content="Email:" Grid.ColumnSpan="2" FontFamily="Algerian" Margin="15,40,131,35" Grid.Row="3"/>
+        <TextBox Grid.Column="1" Width="auto" Name="txtbxmail" Margin="38,31,206,66" Grid.Row="3" Background="White" />
+        <TextBlock Grid.Row="1" x:Name="NamError" TextAlignment="Center" Foreground="Red" Visibility="Hidden" Margin="15,97,95,10" Grid.ColumnSpan="2"  
+                        >  Name Must contain at Least 4 letters</TextBlock>
+
+        <TextBlock  Grid.Row="3" Name="EmailError" Foreground="Red" Visibility="Hidden" 
+                   TextBlock.TextAlignment="Center" Margin="10,75,80,13" Grid.ColumnSpan="2"
+              >Invaild Email</TextBlock>
+
+
+        <Button Grid.Row="5" FontFamily="Algerian" Content="Add User" HorizontalAlignment="Right" Margin="0,101,10,66" Grid.Column="1" Width="177" Click="Button_Click" />
+    </Grid>
+</Window>

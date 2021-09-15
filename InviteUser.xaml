@@ -1,0 +1,19 @@
+﻿<Window x:Class="Project.InviteUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="InviteUser" Height="450" Width="350" MinWidth="330">
+    <Grid>
+        <StackPanel Width="330" Height="400">
+            <TextBlock Margin="110,0,43,0" FontSize="20" FontFamily="Algerian"><Run Text="Invite User"/></TextBlock>
+            <StackPanel >
+                <TextBlock Margin="20" FontFamily="bold"><Run Text="Users :"/></TextBlock>
+                <ListBoxItem BorderBrush="Black" Width="200" Height="200"/>
+            </StackPanel>
+            <Button Height="20" Margin="140,50,115,0" RenderTransformOrigin="0.906,3.927"> ADD</Button>
+        </StackPanel>
+    </Grid>
+</Window>

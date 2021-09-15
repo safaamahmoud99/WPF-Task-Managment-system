@@ -1,0 +1,31 @@
+﻿<Window x:Class="Project.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="800" MaxWidth="800" MaxHeight="450">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Width" Value="250"></Setter>
+                <Setter Property="Height" Value="80"></Setter>
+                <Setter Property="FontFamily" Value="Algerian"></Setter>
+                <Setter Property="FontSize" Value="30"> </Setter>
+                <Setter Property="Foreground" Value="#FF124572"></Setter>
+                
+            </Style.Setters>
+            
+        </Style>
+    </Window.Resources>
+        <Grid Width="800" Height="450" >
+            <Grid.Background >
+                <ImageBrush ImageSource="a.jpg" ></ImageBrush>
+            </Grid.Background>
+        <Button Margin="281,55,269,335" Height="Auto" Click="Button_Click">
+            Start
+        </Button>       
+    </Grid>
+    
+</Window>

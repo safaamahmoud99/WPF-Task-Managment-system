@@ -1,0 +1,84 @@
+﻿<Window x:Class="Project.TeamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="TeamWindow" Height="600" Width="1020" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="FontSize" Value="22"></Setter>
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="Background" Value="#FF2C73BB"></Setter>
+                <Setter Property="Height" Value="50"></Setter>
+                <Setter Property="Width" Value="250"></Setter>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <Grid Height="100" VerticalAlignment="Top" Background="#FF46484B">
+            <TextBlock  x:Name="teamnamelabl" Foreground="White" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Algerian Gothic"></TextBlock>
+            <Button Width="50" Height="50" Content="x" FontSize="20" Background="{x:Null}" Panel.ZIndex="1" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="white" Click="Button_Click_1"/>
+        </Grid>
+        <Grid Background="#FF99C4E6" Height="500">
+            <TabControl Height="500">
+                <TabItem Header="Tasks" FontSize="20" FontFamily="Algerian" Background="Transparent" Padding="20">
+                    <StackPanel>
+                        <Grid Height="343">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <ComboBox Name="categoryList" Height="36" Width="350" VerticalAlignment="Top" Margin="78,10,79,0"></ComboBox>
+                            <StackPanel Grid.Column="1" Width="350" Margin="0 10" >
+                                <Label Height="44" Name="categoryLabel" Background="#FFB8C7D6" FontSize="23" Foreground="White" Content="{Binding ElementName=categoryList, Path=SelectedItem}"></Label>
+                                <ListBox Name="TasksList" FontSize="23"></ListBox>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Height="100">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="401*"></ColumnDefinition>
+                                <ColumnDefinition Width="613*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Click="Button_Click" Foreground="Black" Background="#FFB5CADE" Height="Auto" Margin="73,25,112,25" Width="Auto">Add Category</Button>
+                            <Button  Grid.Column="1" Foreground="Black"  Name="AddTaskBtn" Margin="44,25,383,25" Height="Auto"  Click="AddTaskBtn_Click" Background="#FFB9C5D1" Width="Auto">Add Task</Button>
+                            <Button  Grid.Column="1" Foreground="Black"  Name="viewTaskBtn" Margin="344,25,59,25" Height="Auto" Background="#FFB9C5D1" Width="Auto" Click="viewTaskBtn_Click">Viwe Task</Button>
+
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Members" Background="Transparent" Padding="20" Margin="2,-2,-2,0" FontFamily="Algerian" FontSize="20">
+                    <StackPanel>
+                        <ScrollViewer Height="343">
+                            <ComboBox Height="30" Width="800" Margin="20" VerticalAlignment="Top" x:Name="TeamUsers">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Email}"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </ScrollViewer>
+                        <Button Content="Add Member" Foreground="Black" HorizontalAlignment="Right" Margin="0,0,30,0" Name="addM" Click="addM_Click" FontSize="25" Background="#FFB4BCC5"></Button>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Archive" FontSize="20" FontFamily="Algerian" Background="Transparent" Padding="20">
+                    <ListView Name="DoneTask" Margin="0,-1,0,1">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Task Name" Width="200"></GridViewColumn>
+                                <GridViewColumn Header="Pirority" Width="200"></GridViewColumn>
+                                <GridViewColumn Header="Deadline" Width="200"></GridViewColumn>
+                                <GridViewColumn Header="Category" Width="200"></GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </StackPanel>
+</Window>

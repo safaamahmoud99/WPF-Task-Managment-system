@@ -1,0 +1,67 @@
+﻿<Window x:Class="Project.ViweTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="ViweTask" Height="600" Width="700" MinWidth="600">
+    
+        <ScrollViewer>
+        <Viewbox>
+            <Grid>
+           
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Margin="218,21,43,522" FontSize="20" FontFamily="Algerian" RenderTransformOrigin="0.439,-2.151"><Run Text="Task Name"/></TextBlock>
+                    <Button Width="80" Margin="100,21,0,582" Content="Edit"/>
+                </StackPanel>
+                <StackPanel Margin="50,50,29,50">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Margin="0 10" FontSize="20" FontFamily="Tahoma"><Run Text="Category :"/></TextBlock>
+                        <TextBlock  Margin="10 15" FontSize="15" FontFamily="Tahoma"><Run Text="Category "/></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 10" FontSize="20" FontFamily="Tahoma"><Run Text="DateLine :"/></TextBlock>
+                        <TextBlock  Margin="10 15" FontSize="15" FontFamily="Tahoma"><Run Text="Category "/></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 10" FontSize="20" FontFamily="Tahoma"><Run Text="Pirority    :"/></TextBlock>
+                        <TextBlock  Margin="10 15" FontSize="15" FontFamily="Tahoma"><Run Text="Category "/></TextBlock>
+                    </StackPanel>
+                    <CheckBox Margin="0 10" FontSize="15" FontFamily="Tahoma">Done</CheckBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="50,250,50,140">
+                    <StackPanel>
+                        <GroupBox Height="172" Width="230" RenderTransformOrigin="0.547,0.497" Header="Assigned Users" >
+                            <ListBox BorderBrush="Black" Margin="10,10,11,18"></ListBox>
+                        </GroupBox>
+                    </StackPanel>
+                    <StackPanel Margin="50 0">
+                        <GroupBox Height="172" Width="270" Header="Task Attachments  :">
+                            <StackPanel Orientation="Horizontal">
+                                <ListBox BorderBrush="Black" Margin="10,10,10,18" Width="177"/>
+                                <Button Width="30" Margin="20,54,10,74" RenderTransformOrigin="0.898,0.579" Content="+"/>
+                            </StackPanel>
+
+                        </GroupBox>
+
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Margin="50,450,50,10">
+                    <GroupBox Height="172" Header="Task Comments :" Margin="0,0,10,0">
+                        <StackPanel Orientation="Horizontal">
+                            <ListBox BorderBrush="Black" Margin="10,10,10,18" Width="135"></ListBox>
+                            <TextBox Width="150" Margin="30,51,30,72" RenderTransformOrigin="0.51,1.169"/>
+                            <Button Width="30" Margin="0,51,0,72" RenderTransformOrigin="0.898,0.579" Content="+"/>
+                        </StackPanel>
+
+                    </GroupBox>
+
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+    </ScrollViewer>
+    
+
+</Window>
